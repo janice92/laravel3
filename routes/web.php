@@ -11,3 +11,6 @@ Route::post('articles/{id}/comment', [
     'as'   => 'articles.comment',
     'uses' => 'ArticleController@postComment'
 ]);
+
+Route::get('image-upload-demo', 'ImageController@index');
+Route::post('image-upload-demo', 'ImageController@upload');
