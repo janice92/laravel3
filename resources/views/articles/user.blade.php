@@ -7,7 +7,7 @@
         <a class="btn btn-success pull-right" href="{{ route('articles.create') }}">
             Créer un nouvel article
         </a>
-        <h1>Liste des articles de {{ $user->name }}</h1>
+        <h1>Liste de mes articles</h1>
 
         <table class="table table-bordered">
             <thead>
@@ -29,8 +29,7 @@
                         {{ $article->content }}
                     </td>
                     <td>
-                        {{ $art
-                        icle->user->name }}
+                        {{ $article->user->name }}
                     </td>
                     <td>
                         <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary">Afficher</a>

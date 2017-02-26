@@ -20,6 +20,7 @@ class User extends Authenticatable
         'password',
     ];
 
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -36,6 +37,11 @@ class User extends Authenticatable
     {
 
         return $this->hasMany('\App\Models\Blog\Article');
+    }
+    public function create()
+    {
+        
+        return view('create');
     }
 
 public function setPasswordAttribute($value)

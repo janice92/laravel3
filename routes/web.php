@@ -9,19 +9,20 @@ Route::get('user/{id}', 'ArticleController@showUserArticles');
 
 Route::resource('user', 'UserController');
 Route::get('/user', 'UserController@index');
-Route::get('/user/id', 'UserController@edit');
-Route::get('/user/id', 'UserController@show');
+Route::get('user/{user}/edit ', 'UserController@edit');
+Route::get('user.show', 'UserController@show');
 Route::get('/user/create', 'UserController@create');
 Route::post('user', 'UserController@store');
 Route::put('/user/id', 'UserController@update');
 Route::delete('/user/id', 'UserController@destroy');
-
+            
 
 
 Route::post('articles/{id}/comment', [
     'as'   => 'articles.comment',
     'uses' => 'ArticleController@postComment'
 ]);
+
 
 Route::get('image-upload-demo', 'ImageController@index');
 Route::post('image-upload-demo', 'ImageController@upload');

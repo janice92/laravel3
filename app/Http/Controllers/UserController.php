@@ -27,6 +27,7 @@ class UserController extends Controller
  
     public function create()
     {
+        
         return view('create');
     }
  
@@ -44,7 +45,7 @@ class UserController extends Controller
  
     public function edit(User $user)
     {
-        return view('edit',  compact('user'));
+        return view('user.edit',  compact('user'));
     }
  
     public function update(UserUpdateRequest $request, User $user)
