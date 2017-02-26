@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Upload Images</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-
-<body>
-    <div class="container">
-        <div class="panel panel-primary">
-            <div class="page-header">
-                <h2>Télécharger une image</h2>
-            </div>
-            <div class="panel-body">
+@extends('layouts.app')
+@section('content')
 
                 @if(count($errors) > 0)
                     <div class="alert alert-danger">
@@ -30,22 +18,21 @@
                         <strong>{{ $message }}</strong>
                     </div>
 
-                    <img src="/images/{{ Session::get('path') }}">
+                    <img src="/images{{ Session::get('path') }}">
                 @endif
 
-                <form action="{{ url('image-upload-demo') }}" enctype="multipart/form-data" method="post">
+                <form action="/store" enctype="multipart/form-data" method="post">
                     {{ csrf_field() }}
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-8 col-lg-offset-5">
                                 <input type="file" name="image"/>
                             </div>
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-success">Envoyer</button>
+                            <br>
+                            <br>
+                            <div class="col-md-8 col-lg-offset-5">
+                                <button type="submit" value="Upload" class="btn btn-success">Envoyer</button>
                             </div>
                         </div>
                 </form>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+
+@stop

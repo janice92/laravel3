@@ -10,7 +10,12 @@
             <input type="text" name="title" class="form-control" placeholder="Titre de l'article" required>
     
             <textarea name="content" class="form-control" cols="30" rows="10"
-                      placeholder="Contenu de l'article" required></textarea>
+                      placeholder="Contenu de l'article" required>
+            </textarea>
+
+            <input type="file" name="image">
+
+
             <select name="user" class="form-control" required>
                 <option>Merci de sélectionner un utilisateur</option>
                 @foreach($users AS $user)

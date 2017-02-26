@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -15,7 +16,29 @@ class ImageController extends Controller
     {
         return view('imageUpload');
     }
-    
+
+
+    public function store(request $request)
+    {
+        if ($request->hasFile('image')){
+            $request->file('image');
+            return $request->image->storeAs('public', 'test.jpg');
+
+            // return $request->image->store('public');
+            //return Storage::putFile('public/new', $request->file('image'));
+        }
+        else{
+            return 'Aucun fichier';
+        }
+    }
+
+    public function show()
+    {
+        Storage::get;
+    }
+
+
+/*
     public function upload(Request $request)
     {
         $this->validate($request, [
@@ -29,5 +52,6 @@ class ImageController extends Controller
             ->with('success', 'Image Uploaded successfully')
             ->with('path', $imageName);
     }
-        
+*/
+
 }

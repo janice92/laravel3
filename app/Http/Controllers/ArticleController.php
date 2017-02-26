@@ -11,7 +11,6 @@ class ArticleController extends Controller
 {
     public function index()
     {
-
         $articles = Article::with(['user'])->get();
 
         return view('articles.index')->with([
@@ -30,8 +29,9 @@ class ArticleController extends Controller
     }
 
 
-    public function create()
+    public function create(Request $request)
     {
+
         $users = User::all();
 
         return view('articles.create')->with([
@@ -43,11 +43,19 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $user = User::findOrFail($request->user);
+        $images= $request->file('files_field');
+        $images = $request->photo;
+        if ($request->hasFile('photo')) {
+            $filename = $images->getClientOriginalName();
+            Storage::put('upload/images/'.$filename, file_get_contents($request->file('image')->getRealPath()));
+        }
+
 
         $article = Article::create([
             'title'   => $request->title,
             'content' => $request->get('content'), // $request->content
             'user_id' => $user->id,
+            'image' =>$request->file('image')
         ]);
 
         return redirect()->route('articles.index')->with('success', 'L\'article a bien été posté');

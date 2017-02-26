@@ -5,7 +5,7 @@
         <h1>{{ $article->title }}</h1>
         <p>{{ $article->content }}</p>
         <a href="{{ url('/user/'.$article->user->id) }}">{{ $article->user->name }}</a>
-
+<h4>Image</h4>
         <h2>Liste des commentaires</h2>
         @foreach($article->comments AS $comment)
             <div>
