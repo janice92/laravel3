@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Auth;
 use App\Models\Blog\Article;
 use App\Models\Blog\Comment;
 use App\User;

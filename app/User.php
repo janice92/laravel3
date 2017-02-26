@@ -29,10 +29,17 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+     
 
 
     public function articles()
     {
+
         return $this->hasMany('\App\Models\Blog\Article');
+    }
+
+public function setPasswordAttribute($value)
+    {
+        return $this->attributes['password'] = \Hash::make($value);
     }
 }
