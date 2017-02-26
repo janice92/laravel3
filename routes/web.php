@@ -14,3 +14,7 @@ Route::post('articles/{id}/comment', [
 
 Route::get('image-upload-demo', 'ImageController@index');
 Route::post('image-upload-demo', 'ImageController@upload');
+
+Route::get('contact', 'ContactController@contact');
+Route::post('contact', ['as'=>'contact.store','uses'=>'ContactController@contactPost']);
+

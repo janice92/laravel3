@@ -29,8 +29,9 @@
                         {{ $article->content }}
                     </td>
                     <td>
-                        {{ $art
-                        icle->user->name }}
+                        {{ $article->user->name }}
+                    </td>
+                    <td>
                     </td>
                     <td>
                         <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary">Afficher</a>
@@ -48,4 +49,6 @@
         </table>
     </div>
 
+    <div>
+    </div>
 @stop

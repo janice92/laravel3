@@ -9,7 +9,7 @@
     <div class="container">
         <div class="panel panel-primary">
             <div class="page-header">
-                <h2>Image Upload</h2>
+                <h2>Télécharger une image</h2>
             </div>
             <div class="panel-body">
 
@@ -40,7 +40,7 @@
                                 <input type="file" name="image"/>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-success">Upload</button>
+                                <button type="submit" class="btn btn-success">Envoyer</button>
                             </div>
                         </div>
                 </form>

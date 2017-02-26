@@ -7,6 +7,7 @@
         <a class="btn btn-success pull-right" href="{{ route('articles.create') }}">
             Créer un nouvel article
         </a>
+
         <h1>Liste de mes articles</h1>
 
         <table class="table table-bordered">

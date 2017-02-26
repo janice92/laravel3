@@ -29,4 +29,5 @@ class ImageController extends Controller
             ->with('success', 'Image Uploaded successfully')
             ->with('path', $imageName);
     }
+        
 }

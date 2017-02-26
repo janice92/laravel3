@@ -48,7 +48,6 @@ class ArticleController extends Controller
             'title'   => $request->title,
             'content' => $request->get('content'), // $request->content
             'user_id' => $user->id,
-            'img' => 'image'
         ]);
 
         return redirect()->route('articles.index')->with('success', 'L\'article a bien été posté');
@@ -111,20 +110,21 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
-        //$comment = new Comment();
-        //$comment->comment = $request->get('comment');
-        //$comment->article_id = $article->id;
-        //$comment->save();
+        $comment = new Comment();
+        $comment->comment = $request->get('comment');
+        $comment->article_id = $article->id;
+        $comment->save();
 
-       // $comment = Comment::create([
-          //  'comment'    => $request->get('comment'),
-            // 'article_id' => $article->id
-      //  ]);
+        $comment = Comment::create([
+            'comment' => $request->get('comment'),
+             'article_id' => $article->id,
+            'active' => 1
+        ]);
 
-       // if ($request->user()) {
-          //  $comment->user_id = $request->user()->id;
-            //$comment->save();
-        //}
+        if ($request->user()) {
+            $comment->user_id = $request->user()->id;
+            $comment->save();
+        }
 
         return redirect()->back()->with('success', 'Message posté');
 
