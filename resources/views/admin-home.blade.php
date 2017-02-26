@@ -9,6 +9,9 @@
 
                 <div class="panel-body">
                     You are logged as admin!
+                     <a href="{{ url('/user') }}">liste des user</a>
+                      <a href="{{ url('/articles') }}">liste des articles</a>
+
                 </div>
                  
             </div>

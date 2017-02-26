@@ -9,12 +9,12 @@ Route::get('user/{id}', 'ArticleController@showUserArticles');
 
 Route::resource('user', 'UserController');
 Route::get('/user', 'UserController@index');
-Route::get('user/{user}/edit ', 'UserController@edit');
+Route::get('/user.edit', 'UserController@edit');
 Route::get('user.show', 'UserController@show');
 Route::get('/user/create', 'UserController@create');
 Route::post('user', 'UserController@store');
 Route::put('/user/id', 'UserController@update');
-Route::delete('/user/id', 'UserController@destroy');
+Route::delete('/user.destroy', 'UserController@destroy');
             
 
 

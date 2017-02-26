@@ -35,8 +35,8 @@
                     </td>
                     <td>
                         <a href="{{ route('user.show', $user->id) }}" class="btn btn-primary">Afficher</a>
-                        <a href="{{ url('user.edit', $user->id)}}" class="btn btn-success">Modifier</a>
-                        <form action="{{ url('users.destroy', $user->id) }}" method="post" style="display: inline-block;">
+                       <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success">Modifier</a>
+                        <form action="{{ url('user.destroy', $user->id) }}" method="post" style="display: inline-block;">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="DELETE">
                             <button class="btn btn-danger">Supprimer</button>

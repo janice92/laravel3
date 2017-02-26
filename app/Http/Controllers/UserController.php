@@ -27,7 +27,7 @@ class UserController extends Controller
  
     public function create()
     {
-        
+
         return view('create');
     }
  
@@ -45,7 +45,12 @@ class UserController extends Controller
  
     public function edit(User $user)
     {
-        return view('user.edit',  compact('user'));
+        $users   = User::all();
+
+        return view('user.edit')->with([
+            
+            'users'   => $users,
+             ]);
     }
  
     public function update(UserUpdateRequest $request, User $user)
@@ -55,10 +60,12 @@ class UserController extends Controller
         return redirect()->route('user.index')->withOk("L'utilisateur " . $request->name . " a été modifié.");
     }
  
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $this->userRepository->destroy($user);
- 
-        return back();
+          $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return redirect()->route('user.index'); //->back();
     }
 }
