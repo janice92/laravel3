@@ -4,7 +4,6 @@
 <div class="container">
     <h2 id="formulaire">Formulaire de contact</h2>
     <hr>
-
     @if(Session::has('success'))
         <div class="alert alert-success">
             {{ Session::get('success') }}
