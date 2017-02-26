@@ -1,0 +1,17 @@
+.container {
+    width: 800px;
+    margin-top: 50px;
+}
+
+.intro-header{
+    /*background-image: url("../img/home-bg.jpg");*/
+    background-color: #1f648b;
+}
+
+.intro-header .site-heading {
+    padding: 125px 0;
+}
+
+#formulaire{
+    text-align: center;
+}

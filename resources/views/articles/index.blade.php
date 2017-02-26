@@ -10,14 +10,14 @@
 
         <h1>Liste de mes articles</h1>
 
-        <table class="table table-bordered">
+        <table class="table table-bordered" style="text-align: center">
             <thead>
             <tr>
-                <td>ID</td>
-                <td>TITLE</td>
-                <td>DESCRIPTION</td>
-                <td>User</td>
-                <td>ACTIONS</td>
+                <strong><td>ID</td></strong>
+                <strong><td>TITLE</td></strong>
+                <strong><td>DESCRIPTION</td></strong>
+                <strong><td>User</td></strong>
+                <strong><td>ACTIONS</td></strong>
             </tr>
             </thead>
             @foreach($articles AS $article)
@@ -33,12 +33,12 @@
                         {{ $article->user->name }}
                     </td>
                     <td>
-                        <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary">Afficher</a>
-                        <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-success">Modifier</a>
+                        <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary" ><span class="glyphicon glyphicon-eye-open"></span></a>
+                        <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
                         <form action="{{ route('articles.destroy', $article->id) }}" method="post" style="display: inline-block;">
                             {{ csrf_field() }}
                             <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-danger">Supprimer</button>
+                            <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
                         </form>
                     </td>
                     <a href="{{ route('articles.edit', $article->id) }}">

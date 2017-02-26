@@ -20,12 +20,19 @@
 
                     <img src="/images{{ Session::get('path') }}">
                 @endif
+                <div class="row">
+                    <div class="col-md-12" style="text-align: center">
+                        <h1>Upload image</h1>
+                    </div>
+                </div>
+
+<hr>
 
                 <form action="/store" enctype="multipart/form-data" method="post">
                     {{ csrf_field() }}
                         <div class="row">
                             <div class="col-md-8 col-lg-offset-5">
-                                <input type="file" name="image"/>
+                               <input type="file" name="image"/>
                             </div>
                             <br>
                             <br>
