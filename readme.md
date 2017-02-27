@@ -1,7 +1,7 @@
 
-important l'admin se trouve dans la table "admin_users"
+<---!important l'admin se trouve dans la table "admin_users"
 email : admin@app.com
-mdp:admin
+mdp:admin  -->
 
 
 
