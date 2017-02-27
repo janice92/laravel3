@@ -1,3 +1,13 @@
+
+important l'admin se trouve dans la table "admin_users"
+email : admin@app.com
+mdp:admin
+
+
+
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
